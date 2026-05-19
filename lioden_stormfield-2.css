@@ -1,0 +1,1075 @@
+/* ═══════════════════════════════════════════════════════════
+   LIODEN — STORM OVER THE GOLDEN FIELD
+   Font: Metamorphous (Google Fonts)
+   Vibe: Dark storm clouds, shafts of light, golden wheat
+   ═══════════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Metamorphous&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap');
+
+/* ── VARIABLES ───────────────────────────────────────────── */
+:root {
+  --storm-void:      #0d0f14;
+  --storm-deep:      #1a1d24;
+  --storm-cloud:     #2c3140;
+  --storm-mid:       #404860;
+  --storm-silver:    #7a8499;
+  --storm-light:     #b8c4d4;
+
+  --wheat-dark:      #5a3e10;
+  --wheat-mid:       #8b5e1a;
+  --wheat-gold:      #c8861e;
+  --wheat-bright:    #e8a830;
+  --wheat-glow:      #f5c85a;
+  --wheat-pale:      #fde68a;
+
+  --shaft-light:     rgba(245, 200, 90, 0.12);
+  --shaft-bright:    rgba(245, 200, 90, 0.25);
+
+  --border-dark:     #3d2e0a;
+  --border-gold:     #7a5515;
+  --border-bright:   #b07820;
+
+  --text-body:       #d4bfa0;
+  --text-dim:        #8a7560;
+  --text-bright:     #f0d89a;
+  --text-heading:    #f5c85a;
+
+  --font-display:    'Metamorphous', serif;
+  --font-body:       'Crimson Text', Georgia, serif;
+
+  /* Wheat stalk SVG as data URI — used for bullets & small decorations */
+  --wheat-svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 28'%3E%3Cline x1='6' y1='28' x2='6' y2='4' stroke='%23c8861e' stroke-width='1.2'/%3E%3Cellipse cx='6' cy='4' rx='2.2' ry='4' fill='%23e8a830' stroke='%23c8861e' stroke-width='0.6'/%3E%3Cellipse cx='2.5' cy='9' rx='1.8' ry='3.2' transform='rotate(-30 2.5 9)' fill='%23d4952a' stroke='%23b07820' stroke-width='0.5'/%3E%3Cellipse cx='9.5' cy='9' rx='1.8' ry='3.2' transform='rotate(30 9.5 9)' fill='%23d4952a' stroke='%23b07820' stroke-width='0.5'/%3E%3Cellipse cx='3' cy='14' rx='1.6' ry='2.8' transform='rotate(-25 3 14)' fill='%23c8861e' stroke='%23a07015' stroke-width='0.5'/%3E%3Cellipse cx='9' cy='14' rx='1.6' ry='2.8' transform='rotate(25 9 14)' fill='%23c8861e' stroke='%23a07015' stroke-width='0.5'/%3E%3C/svg%3E");
+
+  --stone-svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 12'%3E%3Cellipse cx='8' cy='7' rx='7' ry='4.5' fill='%23404860' stroke='%237a8499' stroke-width='0.8'/%3E%3Cellipse cx='8' cy='5.5' rx='5.5' ry='3' fill='%232c3140' stroke='%23606880' stroke-width='0.5'/%3E%3C/svg%3E");
+}
+
+/* ── GLOBAL RESET & BASE ─────────────────────────────────── */
+body,
+#container,
+#wrapper,
+.main-content,
+div, p, td, th, li, span, a {
+  font-family: var(--font-body) !important;
+  color: var(--text-body);
+}
+
+body {
+  background-color: var(--storm-void) !important;
+  background-image:
+    /* Light shafts */
+    linear-gradient(168deg, transparent 30%, var(--shaft-light) 48%, transparent 56%),
+    linear-gradient(155deg, transparent 40%, var(--shaft-bright) 54%, transparent 62%),
+    linear-gradient(175deg, transparent 20%, var(--shaft-light) 38%, transparent 44%),
+    /* Storm gradient sky */
+    linear-gradient(to bottom,
+      #0a0c10 0%,
+      #12161f 15%,
+      #1e2433 30%,
+      #252d42 45%,
+      #1a2030 60%,
+      #2a1e08 78%,
+      #3d2a08 88%,
+      #1a1208 100%
+    ) !important;
+  /* scroll вместо fixed — убирает размытость фона на мобиле */
+  background-attachment: scroll !important;
+  background-size: 100% 100% !important;
+  min-height: 100vh;
+  line-height: 1.65;
+  font-size: 15px;
+}
+
+/* ── SCROLLBAR ───────────────────────────────────────────── */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--storm-void); }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, var(--wheat-dark), var(--wheat-mid));
+  border-radius: 2px;
+  border: 1px solid var(--border-dark);
+}
+::-webkit-scrollbar-thumb:hover { background: var(--wheat-gold); }
+
+/* ── TYPOGRAPHY ──────────────────────────────────────────── */
+h1, h2, h3, h4, h5, h6,
+.pagetitle, .title, .heading,
+#header h1, .section-header,
+.lion-name, .pride-name, td.title, th {
+  font-family: var(--font-display) !important;
+  color: var(--text-heading) !important;
+  text-shadow:
+    0 0 18px rgba(200, 134, 30, 0.5),
+    0 1px 3px rgba(0,0,0,0.8) !important;
+  letter-spacing: 0.04em;
+}
+
+h1, .pagetitle { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+
+/* Decorative rule under headings */
+h1::after, h2::after, .pagetitle::after {
+  content: '';
+  display: block;
+  margin-top: 6px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--wheat-gold), var(--wheat-bright), var(--wheat-gold), transparent);
+  box-shadow: 0 0 6px rgba(200,134,30,0.4);
+}
+
+/* ── LINKS ───────────────────────────────────────────────── */
+a, a:visited {
+  color: var(--wheat-gold) !important;
+  text-decoration: none !important;
+  transition: color 0.2s, text-shadow 0.2s;
+}
+a:hover {
+  color: var(--wheat-pale) !important;
+  text-shadow: 0 0 10px rgba(245, 200, 90, 0.5) !important;
+}
+
+/* ── MAIN CONTAINERS & PANELS ────────────────────────────── */
+#content, .content, .main-content,
+.panel, .box, .block, .module,
+.profile-box, .lion-box, .news-box,
+div.content-box, .section, .card {
+  background: linear-gradient(145deg,
+    rgba(26, 29, 36, 0.92) 0%,
+    rgba(18, 20, 26, 0.95) 100%
+  ) !important;
+  border: 1px solid var(--border-gold) !important;
+  border-top: 2px solid var(--wheat-mid) !important;
+  border-radius: 3px !important;
+  box-shadow:
+    0 4px 24px rgba(0,0,0,0.7),
+    inset 0 1px 0 rgba(200,134,30,0.15),
+    inset 0 0 40px rgba(10,8,2,0.4) !important;
+  padding: 14px 18px !important;
+  margin-bottom: 14px !important;
+}
+
+/* Inner panel glow effect */
+.panel::before, .box::before, .content-box::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(to right, transparent, var(--wheat-gold), transparent);
+  pointer-events: none;
+}
+
+/* ── SIDEBAR ─────────────────────────────────────────────── */
+#sidebar, .sidebar, #left-sidebar, #right-sidebar, nav {
+  background: linear-gradient(180deg,
+    rgba(13, 15, 20, 0.97) 0%,
+    rgba(20, 18, 10, 0.95) 100%
+  ) !important;
+  border-right: 1px solid var(--border-gold) !important;
+  border-left: 1px solid var(--border-dark) !important;
+}
+
+/* Sidebar nav items */
+#sidebar a, .sidebar a, nav a {
+  display: block;
+  padding: 6px 10px;
+  border-bottom: 1px solid rgba(90, 62, 16, 0.3);
+  transition: all 0.2s;
+}
+#sidebar a:hover, .sidebar a:hover, nav a:hover {
+  background: linear-gradient(to right, rgba(200,134,30,0.12), transparent) !important;
+  padding-left: 16px !important;
+  border-left: 2px solid var(--wheat-gold) !important;
+}
+
+/* ── TABLES ──────────────────────────────────────────────── */
+table {
+  border-collapse: collapse !important;
+  width: 100%;
+}
+
+thead tr, tr.header, .table-header tr {
+  background: linear-gradient(to right,
+    rgba(90, 62, 16, 0.6),
+    rgba(139, 94, 26, 0.4),
+    rgba(90, 62, 16, 0.6)
+  ) !important;
+}
+
+th {
+  padding: 8px 12px !important;
+  border: 1px solid var(--border-gold) !important;
+  font-size: 0.9em;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+td {
+  padding: 6px 10px !important;
+  border: 1px solid rgba(90, 62, 16, 0.4) !important;
+  vertical-align: middle;
+}
+
+tr:nth-child(even) td {
+  background: rgba(200, 134, 30, 0.04) !important;
+}
+tr:hover td {
+  background: rgba(200, 134, 30, 0.09) !important;
+}
+
+/* ── BUTTONS ─────────────────────────────────────────────── */
+input[type="submit"],
+input[type="button"],
+button,
+.button, .btn,
+a.button, a.btn {
+  font-family: var(--font-display) !important;
+  font-size: 0.88em !important;
+  letter-spacing: 0.06em !important;
+  color: var(--wheat-pale) !important;
+  background: linear-gradient(to bottom,
+    rgba(90, 62, 16, 0.9) 0%,
+    rgba(60, 40, 8, 0.95) 50%,
+    rgba(45, 30, 5, 0.98) 100%
+  ) !important;
+  border: 1px solid var(--border-bright) !important;
+  border-top-color: var(--wheat-mid) !important;
+  border-radius: 2px !important;
+  padding: 5px 14px !important;
+  cursor: pointer !important;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.8) !important;
+  box-shadow:
+    0 2px 8px rgba(0,0,0,0.6),
+    inset 0 1px 0 rgba(200,134,30,0.2) !important;
+  transition: all 0.2s !important;
+  position: relative !important;
+}
+
+input[type="submit"]:hover,
+input[type="button"]:hover,
+button:hover,
+.button:hover, .btn:hover {
+  background: linear-gradient(to bottom,
+    rgba(139, 94, 26, 0.95) 0%,
+    rgba(90, 62, 16, 1) 100%
+  ) !important;
+  border-color: var(--wheat-glow) !important;
+  box-shadow:
+    0 3px 14px rgba(200,134,30,0.3),
+    inset 0 1px 0 rgba(245,200,90,0.25) !important;
+  color: var(--wheat-glow) !important;
+  transform: translateY(-1px) !important;
+}
+
+/* ── SMALL BUTTONS → WHEAT STALKS ───────────────────────── */
+/* Small icon-style buttons (sort, toggle, small nav) */
+input[type="submit"].small,
+button.small, .btn-sm, .btn-small,
+.icon-btn, .mini-btn,
+input[type="submit"][value="+"],
+input[type="submit"][value="-"],
+input[type="submit"][value="x"],
+input[type="submit"][value="X"],
+input[type="button"].small {
+  width: 22px !important;
+  height: 28px !important;
+  padding: 0 !important;
+  font-size: 0 !important;        /* hide text */
+  background-color: transparent !important;
+  background-image: var(--wheat-svg) !important;
+  background-size: 14px 22px !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  border: none !important;
+  box-shadow: none !important;
+  filter: drop-shadow(0 0 3px rgba(200,134,30,0.5));
+  transition: filter 0.2s, transform 0.2s !important;
+}
+input[type="submit"].small:hover,
+button.small:hover, .btn-sm:hover,
+.icon-btn:hover, .mini-btn:hover {
+  filter: drop-shadow(0 0 6px rgba(245,200,90,0.8)) brightness(1.2) !important;
+  transform: scale(1.15) !important;
+  background-color: transparent !important;
+}
+
+/* ── BULLET LISTS → WHEAT STALKS ────────────────────────── */
+ul {
+  list-style: none !important;
+  padding-left: 24px !important;
+}
+ul > li {
+  position: relative !important;
+  padding-left: 8px !important;
+  margin-bottom: 4px !important;
+}
+ul > li::before {
+  content: '' !important;
+  position: absolute !important;
+  left: -18px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 12px !important;
+  height: 20px !important;
+  background-image: var(--wheat-svg) !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+}
+
+/* ── FORM ELEMENTS ───────────────────────────────────────── */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+select, textarea {
+  font-family: var(--font-body) !important;
+  background: rgba(13, 15, 20, 0.9) !important;
+  color: var(--text-bright) !important;
+  border: 1px solid var(--border-gold) !important;
+  border-top-color: var(--border-dark) !important;
+  border-radius: 2px !important;
+  padding: 5px 8px !important;
+  box-shadow: inset 0 2px 6px rgba(0,0,0,0.5) !important;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+input:focus, select:focus, textarea:focus {
+  outline: none !important;
+  border-color: var(--wheat-gold) !important;
+  box-shadow:
+    inset 0 2px 6px rgba(0,0,0,0.5),
+    0 0 8px rgba(200,134,30,0.3) !important;
+}
+
+select option {
+  background: var(--storm-deep) !important;
+  color: var(--text-bright) !important;
+}
+
+/* ── HEADER / TOP BAR ────────────────────────────────────── */
+#header, .site-header, #top-bar, .header,
+.navbar, .navbar-default {
+  background: linear-gradient(to bottom,
+    rgba(8, 9, 12, 0.99) 0%,
+    rgba(18, 20, 28, 0.97) 60%,
+    rgba(30, 22, 8, 0.95) 100%
+  ) !important;
+  border-bottom: 2px solid var(--border-gold) !important;
+  box-shadow: 0 3px 20px rgba(0,0,0,0.8) !important;
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+}
+
+/* Lioden реальный topbar (строка с SB/GB/Messages) */
+.topbar {
+  background: linear-gradient(to right, #0a0b0e, #14110a, #0a0b0e) !important;
+  border: none !important;
+  border-bottom: 1px solid var(--border-gold) !important;
+  border-radius: 0 0 6px 6px !important;
+  color: var(--text-body) !important;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.8) !important;
+}
+.topbar a:link, .topbar a:visited, .topbar a:active {
+  color: var(--wheat-gold) !important;
+  font-family: var(--font-body) !important;
+  font-size: 0.88em !important;
+}
+.topbar a:hover, .topbar a:focus {
+  color: var(--wheat-pale) !important;
+  text-shadow: 0 0 8px rgba(245,200,90,0.5) !important;
+}
+
+/* Navbar links (DEN, CROSSROADS, HOARD...) */
+.navbar-default .navbar-nav > li > a,
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover {
+  font-family: var(--font-display) !important;
+  color: var(--storm-silver) !important;
+  font-size: 0.85em !important;
+  letter-spacing: 0.04em !important;
+}
+.navbar-default .navbar-nav > li > a:hover {
+  color: var(--wheat-gold) !important;
+  background: rgba(200,134,30,0.1) !important;
+}
+.navbar-default .navbar-nav > .active > a {
+  color: var(--wheat-bright) !important;
+  background: rgba(90,62,16,0.4) !important;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: var(--border-dark) !important;
+}
+
+/* ── NAVIGATION TABS ─────────────────────────────────────── */
+.tabs, .tab-bar, .nav-tabs, ul.navigation {
+  border-bottom: 1px solid var(--border-gold) !important;
+}
+
+.tab, .nav-tab, .tab-item,
+ul.navigation li a {
+  font-family: var(--font-display) !important;
+  font-size: 0.85em !important;
+  letter-spacing: 0.05em !important;
+  padding: 6px 14px !important;
+  color: var(--storm-silver) !important;
+  border: 1px solid transparent !important;
+  border-bottom: none !important;
+  transition: all 0.2s !important;
+}
+
+.tab:hover, .nav-tab:hover, ul.navigation li a:hover {
+  color: var(--wheat-gold) !important;
+  background: rgba(200, 134, 30, 0.1) !important;
+}
+
+.tab.active, .nav-tab.active, ul.navigation li.current a {
+  color: var(--wheat-bright) !important;
+  background: linear-gradient(to bottom, rgba(90,62,16,0.5), rgba(60,40,8,0.7)) !important;
+  border-color: var(--border-gold) !important;
+  border-bottom-color: var(--storm-deep) !important;
+}
+
+/* ── PROFILE / LION CARDS ────────────────────────────────── */
+.lion-profile, .profile-box, .stat-box, .trait-box {
+  border-color: var(--border-gold) !important;
+}
+
+.stat-label, .trait-label {
+  font-family: var(--font-display) !important;
+  font-size: 0.82em !important;
+  color: var(--storm-silver) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.07em !important;
+}
+
+.stat-value, .trait-value {
+  color: var(--wheat-bright) !important;
+  font-weight: 600 !important;
+}
+
+/* ── PROGRESS BARS ───────────────────────────────────────── */
+.progress, progress, .bar-outer, .stat-bar {
+  background: rgba(13, 15, 20, 0.8) !important;
+  border: 1px solid var(--border-dark) !important;
+  border-radius: 1px !important;
+  overflow: hidden !important;
+  height: 10px !important;
+}
+
+.progress-inner, .bar-fill, .stat-fill,
+progress::-webkit-progress-value {
+  background: linear-gradient(to right, var(--wheat-dark), var(--wheat-gold), var(--wheat-bright)) !important;
+  box-shadow: 0 0 6px rgba(200,134,30,0.4) !important;
+}
+
+progress::-webkit-progress-bar {
+  background: rgba(13, 15, 20, 0.8) !important;
+}
+
+/* ── TOOLTIPS ────────────────────────────────────────────── */
+.tooltip, [data-tooltip], .tt {
+  background: rgba(10, 12, 16, 0.97) !important;
+  border: 1px solid var(--border-gold) !important;
+  border-radius: 2px !important;
+  color: var(--text-bright) !important;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.8), 0 0 12px rgba(200,134,30,0.2) !important;
+  font-family: var(--font-body) !important;
+  font-size: 0.9em !important;
+}
+
+/* ── NOTIFICATIONS / ALERTS ──────────────────────────────── */
+.alert, .notice, .notification, .success, .error, .warning {
+  border-radius: 2px !important;
+  border-left: 3px solid var(--wheat-gold) !important;
+  background: rgba(18, 20, 26, 0.95) !important;
+}
+.error { border-left-color: #9c3030 !important; }
+.success { border-left-color: #3a7a30 !important; }
+
+/* ── MODAL / OVERLAY ─────────────────────────────────────── */
+.modal, .overlay-box, .popup {
+  background: linear-gradient(145deg,
+    rgba(18, 20, 26, 0.98),
+    rgba(13, 15, 20, 0.99)
+  ) !important;
+  border: 1px solid var(--border-gold) !important;
+  border-top: 2px solid var(--wheat-mid) !important;
+  box-shadow:
+    0 8px 40px rgba(0,0,0,0.9),
+    0 0 60px rgba(200,134,30,0.1) !important;
+}
+
+.modal-overlay, .bg-overlay {
+  background: rgba(5, 5, 8, 0.85) !important;
+  backdrop-filter: blur(2px) !important;
+}
+
+/* ── HORIZONTAL RULES ────────────────────────────────────── */
+hr {
+  border: none !important;
+  height: 1px !important;
+  background: linear-gradient(to right,
+    transparent,
+    var(--border-gold),
+    var(--wheat-bright),
+    var(--border-gold),
+    transparent
+  ) !important;
+  margin: 16px 0 !important;
+  box-shadow: 0 0 4px rgba(200,134,30,0.3) !important;
+}
+
+/* ── IMAGES ──────────────────────────────────────────────── */
+img.lion-img, .lion-image img, .profile-img {
+  border: 2px solid var(--border-gold) !important;
+  box-shadow:
+    0 0 0 1px var(--border-dark),
+    0 4px 20px rgba(0,0,0,0.7),
+    0 0 15px rgba(200,134,30,0.15) !important;
+}
+
+/* ── DECORATIVE CORNERS (on major containers) ────────────── */
+.panel, .box, .content-box {
+  position: relative;
+}
+.panel::before, .panel::after,
+.box::before, .box::after {
+  pointer-events: none;
+}
+
+/* Stone texture for alternate small elements */
+.tag, .badge, .label-pill {
+  background-image: var(--stone-svg) !important;
+  background-size: cover !important;
+  border: 1px solid var(--storm-mid) !important;
+  color: var(--storm-light) !important;
+  font-family: var(--font-display) !important;
+  font-size: 0.75em !important;
+  border-radius: 2px !important;
+  padding: 1px 6px !important;
+}
+
+/* ══════════════════════════════════════════════════════════
+   LIODEN-SPECIFIC FIXES — точные классы сайта
+   ══════════════════════════════════════════════════════════ */
+
+/* ── TOPBAR (.topbar — строка с жуками/валютой) ─────────── */
+.topbar {
+  background: linear-gradient(to right,
+    #0a0c10,
+    #131008,
+    #0a0c10
+  ) !important;
+  border: 1px solid var(--border-gold) !important;
+  border-top: none !important;
+  border-bottom-left-radius: 8px !important;
+  border-bottom-right-radius: 8px !important;
+  color: var(--text-body) !important;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.7), 0 0 20px rgba(200,134,30,0.08) !important;
+}
+.topbar a:link, .topbar a:visited, .topbar a:active {
+  color: var(--wheat-gold) !important;
+  font-family: var(--font-body) !important;
+}
+.topbar a:hover { color: var(--wheat-pale) !important; }
+
+/* ── ЖУКИ: SB = СЕРЕБРО, GB = ЗОЛОТО ────────────────────── */
+/*
+  Lioden хранит иконки жуков по URL вида:
+    /images/currency/sb.png  — Silver Beetles
+    /images/currency/gb.png  — Gold Beetles
+  Селекторы по точному имени файла — не по слову "gold" целиком,
+  чтобы не задеть картинки львов с золотым фоном.
+*/
+
+/* Сброс — убираем все случайные фильтры с картинок */
+img { filter: none; }
+
+/* SB — Silver Beetles: холодный серебристо-стальной блеск */
+img[src*="/sb.png"],
+img[src*="sb_icon"],
+img[src*="silver_beetle"],
+img[alt="SB"] {
+  filter:
+    grayscale(0.2)
+    brightness(1.2)
+    contrast(1.05)
+    hue-rotate(185deg)
+    saturate(0.55)
+    drop-shadow(0 0 5px rgba(170, 210, 240, 0.75)) !important;
+}
+
+/* GB — Gold Beetles: тёплый янтарно-золотой */
+img[src*="/gb.png"],
+img[src*="gb_icon"],
+img[src*="gold_beetle"],
+img[alt="GB"] {
+  filter:
+    sepia(1)
+    saturate(4.5)
+    hue-rotate(4deg)
+    brightness(1.3)
+    drop-shadow(0 0 6px rgba(245, 195, 60, 0.85)) !important;
+}
+
+/* Event currency — медно-бронзовый */
+img[src*="/es.png"],
+img[src*="event_currency"],
+img[alt="ES"] {
+  filter:
+    sepia(1) saturate(3) hue-rotate(340deg) brightness(1.1)
+    drop-shadow(0 0 4px rgba(200, 100, 50, 0.6)) !important;
+}
+
+/* Badge (счётчик рядом с жуком) */
+.badge {
+  background: rgba(30, 22, 8, 0.9) !important;
+  border: 1px solid var(--border-gold) !important;
+  color: var(--wheat-bright) !important;
+  font-family: var(--font-display) !important;
+  font-size: 0.78em !important;
+  box-shadow: 0 0 6px rgba(200,134,30,0.3) !important;
+}
+
+/* ── ПЕЩЕРЫ И ХОЛМИКИ (.cave-grid, .mound-grid) ──────────── */
+.cave-grid, .mound-grid {
+  background: rgba(14, 16, 20, 0.93) !important;
+  border: 1px solid rgba(60, 44, 10, 0.5) !important;
+  border-radius: 2px !important;
+  color: var(--text-body) !important;
+}
+.cave-grid td, .mound-grid td,
+.cave-grid th, .mound-grid th {
+  background: rgba(14, 16, 20, 0.92) !important;
+  border-color: rgba(60, 44, 10, 0.4) !important;
+  color: var(--text-body) !important;
+}
+/* Серые подписи под слотами */
+.cave-grid small, .mound-grid small,
+.cave-grid .cave-label, .cave-grid .mound-label,
+.cave-grid i, .mound-grid i {
+  color: var(--text-dim) !important;
+}
+
+/* Den-страница — Empty Cave Slot плитки */
+td[style*="background:#"],
+td[style*="background: #"],
+td[bgcolor] {
+  background: rgba(16, 18, 24, 0.94) !important;
+  color: var(--text-body) !important;
+}
+
+/* ── ОСНОВНАЯ ПАНЕЛЬ КОНТЕНТА (.main) ────────────────────── */
+.main {
+  background: linear-gradient(145deg,
+    rgba(16, 18, 24, 0.96),
+    rgba(12, 14, 18, 0.98)
+  ) !important;
+  border: 1px solid var(--border-gold) !important;
+  border-radius: 4px !important;
+  box-shadow:
+    0 4px 24px rgba(0,0,0,0.7),
+    inset 0 1px 0 rgba(200,134,30,0.1) !important;
+}
+
+/* ── НАВБАР (.navbar) ────────────────────────────────────── */
+.navbar, .navbar-default {
+  background: linear-gradient(to bottom,
+    rgba(20, 22, 30, 0.99),
+    rgba(14, 16, 20, 0.99)
+  ) !important;
+  border-bottom: 1px solid var(--border-gold) !important;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.6) !important;
+}
+.navbar-default .navbar-nav > li > a {
+  color: var(--storm-silver) !important;
+  font-family: var(--font-display) !important;
+  font-size: 0.85em !important;
+  letter-spacing: 0.04em !important;
+}
+.navbar-default .navbar-nav li a:hover,
+.navbar-default .navbar-nav > .active > a {
+  color: var(--wheat-bright) !important;
+  background: rgba(200, 134, 30, 0.12) !important;
+}
+
+/* ── САЙДБАР (.sidebar) ──────────────────────────────────── */
+.sidebar {
+  background: rgba(12, 14, 18, 0.96) !important;
+  border-left: 1px solid var(--border-gold) !important;
+  border-bottom: 1px solid var(--border-dark) !important;
+  border-bottom-left-radius: 4px !important;
+  color: var(--text-body) !important;
+}
+.col-md-3 .panel {
+  background: rgba(16, 18, 24, 0.95) !important;
+  border: 1px solid var(--border-dark) !important;
+  box-shadow: none !important;
+}
+
+/* ── ПРОГРЕСС-БАР ────────────────────────────────────────── */
+.progress-bar {
+  background: linear-gradient(to right,
+    var(--wheat-dark), var(--wheat-gold), var(--wheat-bright)
+  ) !important;
+  box-shadow: 0 0 6px rgba(200,134,30,0.4) !important;
+}
+.progress {
+  background: rgba(10, 12, 16, 0.8) !important;
+  border: 1px solid var(--border-dark) !important;
+}
+
+/* ── ЧАТ ─────────────────────────────────────────────────── */
+.chat_light {
+  background: rgba(18, 20, 26, 0.95) !important;
+  color: var(--text-body) !important;
+}
+.chat_dark {
+  background: rgba(12, 14, 18, 0.97) !important;
+  color: var(--text-body) !important;
+}
+.chatContainer {
+  background: rgba(10, 12, 16, 0.98) !important;
+  border: 1px solid var(--border-dark) !important;
+}
+
+/* ── ВСЕ БЕЛЫЕ / СЕРЫЕ ПОЛЯ — АГРЕССИВНЫЙ OVERRIDE ──────── */
+/* inline style overrides */
+[style*="background: white"],
+[style*="background:white"],
+[style*="background: #fff"],
+[style*="background:#fff"],
+[style*="background: #FFF"],
+[style*="background:#FFF"],
+[style*="background: #ffffff"],
+[style*="background:#ffffff"],
+[style*="background: #FFFFFF"],
+[style*="background:#FFFFFF"],
+[style*="background-color: white"],
+[style*="background-color:white"],
+[style*="background-color: #fff"],
+[style*="background-color:#fff"],
+[style*="background-color: #ffffff"],
+[style*="background-color:#ffffff"],
+[style*="background: rgb(255, 255, 255)"],
+[style*="background-color: rgb(255, 255, 255)"] {
+  background: rgba(16, 18, 24, 0.96) !important;
+  color: var(--text-body) !important;
+}
+
+/* Светло-серые inline */
+[style*="background: #f"],
+[style*="background:#f"],
+[style*="background: #e"],
+[style*="background:#e"],
+[style*="background: #d"],
+[style*="background:#d"],
+[style*="background: #c"],
+[style*="background:#c"] {
+  background: rgba(18, 20, 28, 0.95) !important;
+  color: var(--text-body) !important;
+}
+
+/* ── ТАБЛИЦЫ (table.table, .table-bordered) ──────────────── */
+.table, table.table {
+  background: transparent !important;
+  color: var(--text-body) !important;
+}
+.table td, .table th,
+table td, table th {
+  background-color: rgba(14, 16, 20, 0.9) !important;
+  border-color: rgba(90, 62, 16, 0.35) !important;
+  color: var(--text-body) !important;
+}
+.table > thead > tr > th,
+.table .top,
+table thead tr {
+  background: linear-gradient(to right,
+    rgba(60, 42, 10, 0.8),
+    rgba(90, 62, 16, 0.6),
+    rgba(60, 42, 10, 0.8)
+  ) !important;
+  color: var(--text-heading) !important;
+}
+.table-striped > tbody > tr:nth-of-type(odd) > td {
+  background-color: rgba(20, 22, 30, 0.9) !important;
+}
+.table-striped > tbody > tr:nth-of-type(even) > td {
+  background-color: rgba(14, 16, 20, 0.9) !important;
+}
+.table-hover > tbody > tr:hover > td {
+  background-color: rgba(90, 62, 16, 0.2) !important;
+}
+
+/* ── INPUT, TEXTAREA (все белые поля форм) ───────────────── */
+input, input[type="text"], input[type="password"],
+input[type="email"], input[type="search"],
+input[type="number"], select, textarea,
+.form-control {
+  background: rgba(10, 12, 16, 0.92) !important;
+  background-color: rgba(10, 12, 16, 0.92) !important;
+  color: var(--text-bright) !important;
+  border: 1px solid var(--border-gold) !important;
+  border-radius: 2px !important;
+  box-shadow: inset 0 2px 6px rgba(0,0,0,0.5) !important;
+}
+input:focus, textarea:focus, select:focus, .form-control:focus {
+  border-color: var(--wheat-gold) !important;
+  box-shadow: inset 0 2px 6px rgba(0,0,0,0.5), 0 0 8px rgba(200,134,30,0.3) !important;
+  outline: none !important;
+}
+select option {
+  background: #12141a !important;
+  color: var(--text-bright) !important;
+}
+
+/* ── PANEL (Bootstrap panels у Lioden) ───────────────────── */
+.panel {
+  background: rgba(16, 18, 24, 0.95) !important;
+  border: 1px solid var(--border-gold) !important;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.6) !important;
+}
+.panel-default > .panel-heading {
+  background: linear-gradient(to right,
+    rgba(40, 30, 8, 0.95),
+    rgba(60, 44, 12, 0.9)
+  ) !important;
+  border-bottom: 1px solid var(--border-gold) !important;
+  color: var(--text-heading) !important;
+  font-family: var(--font-display) !important;
+}
+.panel-body {
+  background: rgba(14, 16, 20, 0.95) !important;
+  color: var(--text-body) !important;
+}
+.panel-footer {
+  background: rgba(12, 14, 18, 0.95) !important;
+  border-top: 1px solid var(--border-dark) !important;
+}
+
+/* ── WELL / BREADCRUMB / ALERT (Bootstrap) ───────────────── */
+.well {
+  background: rgba(12, 14, 18, 0.95) !important;
+  border: 1px solid var(--border-dark) !important;
+  box-shadow: inset 0 2px 8px rgba(0,0,0,0.4) !important;
+  color: var(--text-body) !important;
+}
+.breadcrumb {
+  background: rgba(10, 12, 16, 0.9) !important;
+  border: 1px solid var(--border-dark) !important;
+  color: var(--text-dim) !important;
+}
+.breadcrumb > .active { color: var(--wheat-gold) !important; }
+
+.alert {
+  background: rgba(24, 20, 8, 0.95) !important;
+  border: 1px solid var(--border-gold) !important;
+  border-left: 3px solid var(--wheat-gold) !important;
+  color: var(--text-bright) !important;
+}
+.alert-danger, .alert-error {
+  border-left-color: #9c3030 !important;
+  background: rgba(24, 8, 8, 0.95) !important;
+}
+.alert-success {
+  border-left-color: #4a9a3a !important;
+  background: rgba(8, 20, 8, 0.95) !important;
+}
+.alert-info {
+  border-left-color: var(--storm-mid) !important;
+}
+
+/* ── LIST GROUP (Bootstrap) ──────────────────────────────── */
+.list-group-item {
+  background: rgba(14, 16, 20, 0.95) !important;
+  border: 1px solid rgba(90, 62, 16, 0.35) !important;
+  color: var(--text-body) !important;
+}
+.list-group-item:hover, .list-group-item:focus {
+  background: rgba(40, 30, 8, 0.8) !important;
+}
+.list-group-item.active {
+  background: rgba(90, 62, 16, 0.7) !important;
+  border-color: var(--border-gold) !important;
+  color: var(--wheat-pale) !important;
+}
+
+/* ── TEXTAREA / COMMENT BOX ──────────────────────────────── */
+textarea,
+textarea.comment-field,
+#comment-textarea,
+.comment-box textarea,
+div[contenteditable],
+.editor-area {
+  background: rgba(10, 12, 16, 0.92) !important;
+  color: var(--text-bright) !important;
+  border: 1px solid var(--border-gold) !important;
+  border-radius: 2px !important;
+  padding: 8px 10px !important;
+  resize: vertical !important;
+  box-shadow: inset 0 2px 8px rgba(0,0,0,0.6) !important;
+  font-family: var(--font-body) !important;
+  font-size: 0.95em !important;
+  line-height: 1.6 !important;
+}
+textarea:focus {
+  border-color: var(--wheat-gold) !important;
+  box-shadow:
+    inset 0 2px 8px rgba(0,0,0,0.6),
+    0 0 10px rgba(200,134,30,0.25) !important;
+}
+
+/* ── BREADCRUMB ──────────────────────────────────────────── */
+.breadcrumb, .breadcrumbs, #breadcrumb,
+nav[aria-label="breadcrumb"],
+.path-nav {
+  background: rgba(13, 15, 18, 0.9) !important;
+  border: 1px solid var(--border-dark) !important;
+  border-radius: 2px !important;
+  padding: 4px 10px !important;
+  color: var(--text-dim) !important;
+  font-size: 0.85em !important;
+}
+.breadcrumb a, .breadcrumbs a {
+  color: var(--wheat-mid) !important;
+}
+.breadcrumb a:hover { color: var(--wheat-gold) !important; }
+
+/* ── NOTIFICATION STRIPS (жёлтые/тёмные полоски) ────────── */
+/* "Your lionesses have returned from hunting!" */
+.notification-bar, .alert-bar, .info-bar,
+div.notification, div.alert, div.info,
+.hunt-return, .challenge-notify,
+[class*="notification"], [class*="alert-strip"],
+[class*="info-strip"] {
+  background: linear-gradient(to right,
+    rgba(30, 22, 8, 0.97),
+    rgba(45, 34, 10, 0.95),
+    rgba(30, 22, 8, 0.97)
+  ) !important;
+  border: 1px solid var(--border-gold) !important;
+  border-left: 3px solid var(--wheat-gold) !important;
+  color: var(--text-bright) !important;
+  padding: 8px 14px !important;
+  border-radius: 2px !important;
+}
+
+/* Красные/важные нотификации */
+[class*="challenge"], [class*="warning-bar"],
+div.warning, .red-notice {
+  border-left-color: #9c3030 !important;
+  background: linear-gradient(to right,
+    rgba(28, 10, 10, 0.97),
+    rgba(20, 14, 8, 0.95)
+  ) !important;
+}
+
+/* ── SAVED / SUCCESS BARS ────────────────────────────────── */
+.saved-bar, .success-bar, .save-notice,
+div[class*="saved"], div[class*="success"] {
+  background: linear-gradient(to right,
+    rgba(10, 25, 10, 0.95),
+    rgba(18, 32, 14, 0.95)
+  ) !important;
+  border-left: 3px solid #4a9a3a !important;
+  color: #8fcc7a !important;
+}
+
+/* ── COMMENT / GUESTBOOK AREA ────────────────────────────── */
+.comment-wrapper, .guestbook-entry,
+.post-box, .comment-entry,
+div.comment, .wall-post {
+  background: rgba(16, 18, 24, 0.95) !important;
+  border: 1px solid rgba(90, 62, 16, 0.5) !important;
+  border-radius: 2px !important;
+  padding: 10px 12px !important;
+  margin-bottom: 8px !important;
+}
+
+.comment-author, .post-author,
+.guestbook-entry .author {
+  font-family: var(--font-display) !important;
+  color: var(--wheat-gold) !important;
+  font-size: 0.9em !important;
+}
+
+.comment-date, .post-date, .timestamp {
+  color: var(--text-dim) !important;
+  font-size: 0.8em !important;
+}
+
+/* Кнопка "X" закрытия у комментов */
+.close-btn, button.close, .delete-btn, [value="X"], [value="x"] {
+  background: rgba(80, 20, 20, 0.8) !important;
+  border: 1px solid #6a2020 !important;
+  color: #cc6060 !important;
+  width: 20px !important;
+  height: 20px !important;
+  padding: 0 !important;
+  font-size: 0.7em !important;
+  line-height: 20px !important;
+  text-align: center !important;
+  border-radius: 2px !important;
+}
+.close-btn:hover, button.close:hover {
+  background: rgba(140, 30, 30, 0.9) !important;
+  color: #ff9090 !important;
+}
+
+/* ── MAIN NAVIGATION BAR (DEN, CROSSROADS etc) ───────────── */
+#main-nav, .main-nav, .primary-nav,
+#navigation, ul#nav, .site-nav,
+table.navigation, .nav-container {
+  background: linear-gradient(to bottom,
+    rgba(20, 22, 28, 0.99) 0%,
+    rgba(14, 16, 22, 0.99) 100%
+  ) !important;
+  border: 1px solid var(--border-gold) !important;
+  border-radius: 3px !important;
+}
+
+/* ── PRIDE TABLE (расстановка львиц) ─────────────────────── */
+.pride-grid td, .pride-table td,
+.lion-slot, td.lion-cell {
+  background: rgba(14, 16, 20, 0.9) !important;
+  border: 1px solid rgba(60, 44, 10, 0.5) !important;
+}
+.pride-grid td:hover, td.lion-cell:hover {
+  background: rgba(40, 30, 8, 0.8) !important;
+  border-color: var(--border-gold) !important;
+}
+
+/* ── "NONE! CREATE?" and (+) buttons in pride ────────────── */
+a[href*="create"], td a[href*="lion"],
+.create-link, a.create-btn {
+  color: var(--wheat-mid) !important;
+  font-family: var(--font-display) !important;
+  font-size: 0.82em !important;
+}
+a[href*="create"]:hover { color: var(--wheat-glow) !important; }
+
+/* ── PLAYER INFO BOX ─────────────────────────────────────── */
+.player-info, .member-box, #player-details,
+.player-section {
+  background: linear-gradient(135deg,
+    rgba(14, 16, 20, 0.97),
+    rgba(20, 16, 8, 0.97)
+  ) !important;
+  border-top: 2px solid var(--wheat-dark) !important;
+}
+
+/* ── FOOTER ──────────────────────────────────────────────── */
+#footer, footer, .footer {
+  background: rgba(8, 9, 12, 0.98) !important;
+  border-top: 1px solid var(--border-gold) !important;
+  color: var(--text-dim) !important;
+  font-size: 0.85em !important;
+}
+#footer a, footer a { color: var(--wheat-dark) !important; }
+#footer a:hover, footer a:hover { color: var(--wheat-gold) !important; }
+
+/* ── SELECTION ───────────────────────────────────────────── */
+::selection {
+  background: rgba(200, 134, 30, 0.35) !important;
+  color: var(--wheat-pale) !important;
+}
