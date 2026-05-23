@@ -1,0 +1,77 @@
+/* --- ОСНОВНОЙ ФОН СТРАНИЦЫ --- */
+body {
+    background: url('https://i.postimg.cc/jS4tFJmG/3149384eb432324533b9f56b432b27dc.gif') no-repeat center center fixed;
+    background-size: cover;
+    color: #d1c7bd !important; /* Светлый туманный цвет текста */
+    font-family: 'Georgia', serif !important; /* Элегантный книжный шрифт */
+}
+
+/* --- ОФОРМЛЕНИЕ ПАНЕЛЕЙ И ОКОШЕК --- */
+/* Делаем основные блоки полупрозрачными и скругляем углы */
+.container, .main, .col-md-9, .panel, .table, td {
+    background: rgba(38, 35, 32, 0.75) !important; /* Темный туманный фон для читаемости */
+    border: 1px solid rgba(140, 126, 114, 0.3) !important; /* Мягкие, едва заметные границы */
+    border-radius: 12px !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5) !important; /* Мягкая тень */
+}
+
+/* --- ЗАГОЛОВКИ И СТРОКИ ТАБЛИЦ --- */
+.topbar, .navbar, th, .panel-heading {
+    background: rgba(24, 22, 20, 0.85) !important; /* Более темный тон для заголовков */
+    border-bottom: 2px solid #5a5047 !important;
+    color: #e3deda !important;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* --- СТИЛЬ ДЛЯ ССЫЛОК --- */
+a:link, a:visited {
+    color: #a89482 !important; /* Приглушенный древесно-кремовый цвет */
+    text-shadow: 0 0 5px rgba(168, 148, 130, 0.3);
+    transition: 0.3s ease-in-out;
+}
+
+a:hover, a:active {
+    color: #e3deda !important; /* Высветление при наведении (эффект туманного свечения) */
+    text-decoration: none !important;
+    text-shadow: 0 0 8px rgba(227, 222, 218, 0.6);
+}
+
+/* --- КНОПКИ --- */
+.btn, .btn-primary, input[type="submit"] {
+    background: rgba(74, 66, 59, 0.8) !important;
+    border: 1px solid #736558 !important;
+    color: #e3deda !important;
+    border-radius: 6px !important;
+    transition: 0.3s;
+}
+
+.btn:hover, input[type="submit"]:hover {
+    background: #5a5047 !important;
+    box-shadow: 0 0 10px rgba(168, 148, 130, 0.4);
+}
+
+/* --- КРАСИВОЕ ТЕКСТОВОЕ ОКОШКО (ДЛЯ ИНФО О СЕБЕ) --- */
+/* Вы можете использовать этот класс в HTML-коде: <div class="foggy-box">Ваш текст</div> */
+.foggy-box {
+    background: rgba(28, 26, 24, 0.8) !important;
+    border-left: 4px solid #736558 !important;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 4px;
+    font-style: italic;
+    color: #c4b9ae;
+}
+
+/* --- КАРТИНКА ПЕЩЕРЫ И ЛЬВОВ (ПРОЗРАЧНОСТЬ) --- */
+.cave-grid img, .lion-image img {
+    border-radius: 8px;
+    opacity: 0.9;
+    transition: 0.3s;
+}
+
+.cave-grid img:hover, .lion-image img:hover {
+    opacity: 1;
+    box-shadow: 0 0 12px rgba(168, 148, 130, 0.5);
+}
+
