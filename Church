@@ -1,0 +1,742 @@
+/* ============================================================
+   LIODEN PROFILE CSS — "PRAIRIE CHURCH AT MIDNIGHT"
+   Атмосфера: тёмная равнина, одинокий свет, тихая жуть
+   ============================================================ */
+
+/* --- ЦВЕТОВАЯ ПАЛИТРА ---
+   #0a0806  — абсолютная ночь
+   #130e07  — тёмная земля
+   #1e1609  — тень под травой
+   #2e2010  — тёплая тьма
+   #8b6a3a  — старое дерево
+   #c9a96e  — сухая осенняя трава
+   #e8d5a3  — бледный фонарный свет
+   #f5e8c4  — почти белый, как стена церкви
+*/
+
+/* ============================================================
+   ФОНОВАЯ СЦЕНА — вся страница
+   ============================================================ */
+body,
+#page-wrap,
+.page-wrap,
+#wrapper,
+.wrapper,
+#main-wrap,
+.main-wrap,
+#content,
+.content,
+#site-body,
+.site-body {
+  background-color: #0a0806 !important;
+  background-image:
+    /* Звёзды — редкие, едва видные */
+    radial-gradient(1px 1px at 12% 8%, rgba(245,232,196,0.18) 0%, transparent 100%),
+    radial-gradient(1px 1px at 34% 5%, rgba(245,232,196,0.12) 0%, transparent 100%),
+    radial-gradient(1px 1px at 56% 11%, rgba(245,232,196,0.15) 0%, transparent 100%),
+    radial-gradient(1px 1px at 78% 4%, rgba(245,232,196,0.10) 0%, transparent 100%),
+    radial-gradient(1px 1px at 91% 9%, rgba(245,232,196,0.14) 0%, transparent 100%),
+    radial-gradient(1px 1px at 23% 15%, rgba(245,232,196,0.09) 0%, transparent 100%),
+    radial-gradient(1px 1px at 67% 7%, rgba(245,232,196,0.11) 0%, transparent 100%),
+    /* Горизонт — тусклое свечение земли */
+    radial-gradient(ellipse 80% 30% at 50% 68%, #2e2010 0%, #1a1208 40%, transparent 70%),
+    /* Общий фон ночи */
+    linear-gradient(to bottom, #040302 0%, #0a0806 45%, #130e07 100%) !important;
+  color: #c9a96e !important;
+  font-family: 'Georgia', 'Times New Roman', serif !important;
+  min-height: 100vh !important;
+}
+
+/* ============================================================
+   ОСНОВНЫЕ БЛОКИ / ПАНЕЛИ
+   ============================================================ */
+.panel,
+.box,
+.block,
+.card,
+.module,
+.section,
+.sidebar,
+.widget,
+div[class*="panel"],
+div[class*="box"],
+div[class*="block"],
+div[class*="section"],
+div[class*="module"],
+div[class*="sidebar"],
+div[class*="widget"],
+table,
+td,
+th,
+tr,
+.table-wrap,
+.profile-box,
+.profile-panel,
+.stat-box,
+.info-box,
+.den-box {
+  background-color: #130e07 !important;
+  background-image: none !important;
+  border: 1px solid #2e2010 !important;
+  border-radius: 2px !important;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.7), inset 0 1px 0 rgba(201,169,110,0.04) !important;
+  color: #c9a96e !important;
+}
+
+/* ============================================================
+   ПРОФИЛЬНАЯ ШАПКА / HERO-ЗОНА
+   ============================================================ */
+.profile-header,
+.profile-top,
+.profile-banner,
+.profile-hero,
+.lion-header,
+.lion-top,
+.pride-header,
+div[class*="profile-header"],
+div[class*="profile-top"] {
+  background-color: #0d0a05 !important;
+  background-image:
+    /* Свечение от земли — как свет прожектора на церковь */
+    radial-gradient(ellipse 60% 40% at 50% 100%, rgba(201,169,110,0.08) 0%, transparent 70%),
+    linear-gradient(to bottom, #040302 0%, #0d0a05 100%) !important;
+  border-bottom: 1px solid #2e2010 !important;
+  border-top: none !important;
+  padding: 24px !important;
+  position: relative !important;
+}
+
+/* Имя льва / заголовок профиля */
+.profile-name,
+.lion-name,
+.pride-name,
+h1, h2,
+.profile-header h1,
+.profile-header h2,
+div[class*="name"] h1,
+div[class*="name"] h2 {
+  color: #f5e8c4 !important;
+  font-family: 'Georgia', 'Palatino Linotype', serif !important;
+  font-weight: normal !important;
+  letter-spacing: 0.12em !important;
+  text-shadow:
+    0 0 30px rgba(201,169,110,0.4),
+    0 0 60px rgba(201,169,110,0.15) !important;
+  text-transform: none !important;
+}
+
+/* ============================================================
+   ЗАГОЛОВКИ РАЗДЕЛОВ
+   ============================================================ */
+h3, h4, h5, h6,
+.section-title,
+.panel-title,
+.box-title,
+.block-title,
+div[class*="title"],
+div[class*="heading"] {
+  color: #e8d5a3 !important;
+  font-family: 'Georgia', serif !important;
+  font-weight: normal !important;
+  letter-spacing: 0.08em !important;
+  border-bottom: 1px solid #2e2010 !important;
+  padding-bottom: 6px !important;
+  text-shadow: 0 0 20px rgba(201,169,110,0.2) !important;
+}
+
+/* ============================================================
+   ТЕКСТ
+   ============================================================ */
+p,
+span,
+div,
+li,
+label,
+.text,
+.description,
+.bio,
+.lore {
+  color: #c9a96e !important;
+  line-height: 1.7 !important;
+}
+
+/* Второстепенный текст */
+small,
+.small,
+.muted,
+.subtle,
+.secondary,
+.note,
+.hint {
+  color: #8b6a3a !important;
+}
+
+/* ============================================================
+   ССЫЛКИ
+   ============================================================ */
+a,
+a:visited {
+  color: #e8d5a3 !important;
+  text-decoration: none !important;
+  border-bottom: 1px solid transparent !important;
+  transition: color 0.3s ease, border-color 0.3s ease, text-shadow 0.3s ease !important;
+}
+
+a:hover,
+a:focus {
+  color: #f5e8c4 !important;
+  border-bottom-color: rgba(245,232,196,0.3) !important;
+  text-shadow: 0 0 12px rgba(245,232,196,0.4) !important;
+}
+
+/* ============================================================
+   НАВИГАЦИЯ
+   ============================================================ */
+nav,
+.nav,
+.navigation,
+.menu,
+.tabs,
+.tab-bar,
+ul.nav,
+ul.menu,
+div[class*="nav"],
+div[class*="menu"],
+div[class*="tab"] {
+  background-color: #0d0a05 !important;
+  border-bottom: 1px solid #2e2010 !important;
+}
+
+nav a,
+.nav a,
+.navigation a,
+.menu a,
+.tabs a,
+.tab a,
+.nav-link,
+.menu-item a {
+  color: #8b6a3a !important;
+  padding: 8px 14px !important;
+  display: inline-block !important;
+  border-bottom: 2px solid transparent !important;
+  transition: all 0.3s ease !important;
+  letter-spacing: 0.06em !important;
+}
+
+nav a:hover,
+.nav a:hover,
+.nav-link:hover,
+.menu-item a:hover,
+nav a.active,
+.nav a.active,
+.nav-link.active {
+  color: #e8d5a3 !important;
+  border-bottom-color: #8b6a3a !important;
+  background-color: rgba(46,32,16,0.4) !important;
+  text-shadow: 0 0 10px rgba(201,169,110,0.3) !important;
+}
+
+/* ============================================================
+   КНОПКИ
+   ============================================================ */
+button,
+input[type="button"],
+input[type="submit"],
+.btn,
+.button,
+a.btn,
+a.button,
+div[class*="btn"],
+div[class*="button"] {
+  background-color: #1e1609 !important;
+  background-image: linear-gradient(to bottom, #2e2010, #1a1208) !important;
+  color: #e8d5a3 !important;
+  border: 1px solid #4a3518 !important;
+  border-radius: 2px !important;
+  padding: 7px 18px !important;
+  font-family: 'Georgia', serif !important;
+  letter-spacing: 0.07em !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.5) !important;
+}
+
+button:hover,
+input[type="button"]:hover,
+input[type="submit"]:hover,
+.btn:hover,
+.button:hover,
+a.btn:hover,
+a.button:hover {
+  background-image: linear-gradient(to bottom, #3d2a12, #2e2010) !important;
+  border-color: #8b6a3a !important;
+  color: #f5e8c4 !important;
+  box-shadow: 0 0 12px rgba(201,169,110,0.2), 0 1px 4px rgba(0,0,0,0.6) !important;
+}
+
+/* ============================================================
+   ПОЛЯ ВВОДА / ФОРМЫ
+   ============================================================ */
+input,
+input[type="text"],
+input[type="email"],
+input[type="search"],
+input[type="password"],
+input[type="number"],
+textarea,
+select {
+  background-color: #0d0a05 !important;
+  color: #e8d5a3 !important;
+  border: 1px solid #2e2010 !important;
+  border-radius: 2px !important;
+  padding: 6px 10px !important;
+  font-family: 'Georgia', serif !important;
+  outline: none !important;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #8b6a3a !important;
+  box-shadow: 0 0 8px rgba(139,106,58,0.3) !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #4a3518 !important;
+}
+
+/* Выпадающий список */
+select option {
+  background-color: #130e07 !important;
+  color: #c9a96e !important;
+}
+
+/* ============================================================
+   ТАБЛИЦЫ
+   ============================================================ */
+table {
+  border-collapse: collapse !important;
+  width: 100% !important;
+}
+
+th {
+  background-color: #1a1208 !important;
+  color: #e8d5a3 !important;
+  padding: 8px 12px !important;
+  font-weight: normal !important;
+  letter-spacing: 0.06em !important;
+  border-bottom: 1px solid #2e2010 !important;
+  text-align: left !important;
+}
+
+td {
+  padding: 7px 12px !important;
+  border-bottom: 1px solid #1a1208 !important;
+}
+
+tr:nth-child(even) td {
+  background-color: rgba(30,22,9,0.4) !important;
+}
+
+tr:hover td {
+  background-color: rgba(46,32,16,0.5) !important;
+}
+
+/* ============================================================
+   СТАТЫ / ПРОГРЕСС-БАРЫ
+   ============================================================ */
+.progress,
+.progress-bar,
+.stat-bar,
+.bar,
+div[class*="progress"],
+div[class*="stat-bar"],
+div[class*="bar"] {
+  background-color: #1a1208 !important;
+  border: 1px solid #2e2010 !important;
+  border-radius: 2px !important;
+  overflow: hidden !important;
+}
+
+.progress-fill,
+.bar-fill,
+.stat-fill,
+div[class*="fill"],
+div[class*="progress"] > div {
+  background-image: linear-gradient(to right, #4a3518, #c9a96e) !important;
+  box-shadow: 0 0 8px rgba(201,169,110,0.3) !important;
+}
+
+/* ============================================================
+   СКРОЛЛБАР
+   ============================================================ */
+::-webkit-scrollbar {
+  width: 6px !important;
+  height: 6px !important;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0806 !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2e2010 !important;
+  border-radius: 3px !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4a3518 !important;
+}
+
+/* ============================================================
+   РАЗДЕЛИТЕЛИ / DIVIDERS
+   ============================================================ */
+hr,
+.divider,
+.separator,
+div[class*="divider"],
+div[class*="separator"] {
+  border: none !important;
+  border-top: 1px solid #2e2010 !important;
+  margin: 16px 0 !important;
+}
+
+/* ============================================================
+   ИЗОБРАЖЕНИЯ (лев, аватар, декор)
+   ============================================================ */
+img,
+.avatar,
+.lion-img,
+.portrait,
+.profile-img {
+  filter: brightness(0.92) saturate(0.85) sepia(0.08) !important;
+  border: 1px solid #2e2010 !important;
+  border-radius: 2px !important;
+}
+
+img:hover,
+.avatar:hover,
+.lion-img:hover,
+.portrait:hover {
+  filter: brightness(1.0) saturate(0.95) sepia(0.05) !important;
+  box-shadow: 0 0 16px rgba(201,169,110,0.2) !important;
+  transition: all 0.4s ease !important;
+}
+
+/* ============================================================
+   БЭЙДЖИ / ТЕГИ / МЕТКИ
+   ============================================================ */
+.badge,
+.tag,
+.label,
+.chip,
+.pill,
+span[class*="badge"],
+span[class*="tag"],
+span[class*="label"] {
+  background-color: #1e1609 !important;
+  color: #c9a96e !important;
+  border: 1px solid #2e2010 !important;
+  border-radius: 2px !important;
+  padding: 2px 8px !important;
+  font-size: 0.8em !important;
+}
+
+/* Особый бэйдж — как тусклый свет церковного окна */
+.badge-special,
+.badge-highlight,
+.badge-rare,
+.label-special,
+span[class*="special"],
+span[class*="rare"] {
+  background-color: #2e2010 !important;
+  color: #f5e8c4 !important;
+  border-color: #8b6a3a !important;
+  box-shadow: 0 0 8px rgba(245,232,196,0.15) !important;
+}
+
+/* ============================================================
+   УВЕДОМЛЕНИЯ / АЛЕРТЫ
+   ============================================================ */
+.alert,
+.notice,
+.notification,
+.message,
+div[class*="alert"],
+div[class*="notice"],
+div[class*="notification"] {
+  background-color: #1a1208 !important;
+  border-left: 3px solid #8b6a3a !important;
+  color: #e8d5a3 !important;
+  padding: 12px 16px !important;
+}
+
+.alert-success,
+div[class*="success"] {
+  border-left-color: #6b7c45 !important;
+  background-color: #141a09 !important;
+}
+
+.alert-error,
+.alert-danger,
+div[class*="error"],
+div[class*="danger"] {
+  border-left-color: #7c4535 !important;
+  background-color: #1a0e09 !important;
+}
+
+/* ============================================================
+   МОДАЛЬНЫЕ ОКНА / ПОПАПЫ
+   ============================================================ */
+.modal,
+.modal-content,
+.popup,
+.dialog,
+div[class*="modal"],
+div[class*="popup"],
+div[class*="dialog"] {
+  background-color: #130e07 !important;
+  border: 1px solid #2e2010 !important;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.9), 0 0 60px rgba(0,0,0,0.5) !important;
+  color: #c9a96e !important;
+}
+
+.modal-backdrop,
+.overlay,
+div[class*="backdrop"],
+div[class*="overlay"] {
+  background-color: rgba(4,3,2,0.85) !important;
+}
+
+.modal-header,
+div[class*="modal-header"] {
+  background-color: #0d0a05 !important;
+  border-bottom: 1px solid #2e2010 !important;
+  color: #e8d5a3 !important;
+}
+
+/* ============================================================
+   ЛЕВЫЙ / ПРАВЫЙ САЙДБАР
+   ============================================================ */
+.sidebar,
+.side-panel,
+aside,
+div[class*="sidebar"],
+div[class*="side-panel"] {
+  background-color: #0d0a05 !important;
+  border-right: 1px solid #1e1609 !important;
+}
+
+/* ============================================================
+   СПИСОК / МЕНЮ ЭЛЕМЕНТОВ
+   ============================================================ */
+ul li,
+ol li {
+  color: #c9a96e !important;
+  border-bottom: 1px solid rgba(46,32,16,0.4) !important;
+  padding: 4px 0 !important;
+}
+
+ul li:last-child,
+ol li:last-child {
+  border-bottom: none !important;
+}
+
+/* ============================================================
+   ПОДВАЛ / FOOTER
+   ============================================================ */
+footer,
+.footer,
+#footer,
+div[class*="footer"] {
+  background-color: #040302 !important;
+  border-top: 1px solid #1a1208 !important;
+  color: #4a3518 !important;
+  padding: 16px !important;
+}
+
+footer a,
+.footer a {
+  color: #4a3518 !important;
+}
+
+footer a:hover,
+.footer a:hover {
+  color: #8b6a3a !important;
+}
+
+/* ============================================================
+   СПЕЦИФИЧНЫЕ LIODEN КЛАССЫ
+   (подставь актуальные классы из инспектора браузера)
+   ============================================================ */
+
+/* Профиль льва */
+.lion-profile,
+.lion-view,
+.lion-page {
+  background-color: #0a0806 !important;
+}
+
+/* Характеристики/стат */
+.stat,
+.stat-row,
+.stat-item,
+.trait,
+.trait-item {
+  background-color: #130e07 !important;
+  border: 1px solid #1e1609 !important;
+  color: #c9a96e !important;
+  padding: 5px 10px !important;
+}
+
+.stat-name,
+.trait-name {
+  color: #8b6a3a !important;
+  font-size: 0.85em !important;
+  letter-spacing: 0.05em !important;
+}
+
+.stat-value,
+.trait-value {
+  color: #e8d5a3 !important;
+  font-size: 1em !important;
+}
+
+/* Прайд / прайд-панель */
+.pride-panel,
+.den-panel,
+.territory {
+  background-color: #0d0a05 !important;
+  border: 1px solid #2e2010 !important;
+}
+
+/* Охота / экшн-кнопки */
+.action-btn,
+.hunt-btn,
+.explore-btn {
+  background-image: linear-gradient(to bottom, #2e2010, #1a1208) !important;
+  border: 1px solid #4a3518 !important;
+  color: #e8d5a3 !important;
+}
+
+/* Чат / форум */
+.chat-box,
+.post,
+.forum-post,
+.comment {
+  background-color: #0d0a05 !important;
+  border: 1px solid #1e1609 !important;
+  border-left: 2px solid #2e2010 !important;
+  color: #c9a96e !important;
+  margin-bottom: 8px !important;
+  padding: 10px 14px !important;
+}
+
+.post-author,
+.comment-author {
+  color: #e8d5a3 !important;
+  font-weight: normal !important;
+  letter-spacing: 0.05em !important;
+}
+
+.post-date,
+.comment-date {
+  color: #4a3518 !important;
+  font-size: 0.8em !important;
+}
+
+/* ============================================================
+   SIGNATURE ELEMENT — "ЦЕРКОВНОЕ ОКНО"
+   Особое свечение для выделенных элементов
+   (применяй класс .church-glow вручную к нужным блокам)
+   ============================================================ */
+.church-glow,
+.featured,
+.highlight,
+div[class*="featured"],
+div[class*="highlight"] {
+  position: relative !important;
+  background-color: #130e07 !important;
+  border: 1px solid #4a3518 !important;
+  box-shadow:
+    0 0 20px rgba(201,169,110,0.08),
+    0 0 40px rgba(201,169,110,0.04),
+    inset 0 1px 0 rgba(245,232,196,0.06) !important;
+}
+
+.church-glow::before,
+.featured::before {
+  content: '' !important;
+  position: absolute !important;
+  top: -1px !important;
+  left: 20% !important;
+  right: 20% !important;
+  height: 1px !important;
+  background: linear-gradient(to right, transparent, rgba(201,169,110,0.5), transparent) !important;
+}
+
+/* ============================================================
+   ПЕРЕОПРЕДЕЛЕНИЕ СЕРОГО — ФИНАЛЬНАЯ ЗАЩИТА
+   Убивает все оставшиеся серые оттенки
+   ============================================================ */
+*[style*="background-color: #f"],
+*[style*="background-color: rgb(2"],
+*[style*="background: #f"],
+*[style*="background: gray"],
+*[style*="background: grey"],
+*[style*="background-color: gray"],
+*[style*="background-color: grey"],
+*[style*="background-color: white"],
+*[style*="background-color: #fff"],
+*[style*="background-color: #eee"],
+*[style*="background-color: #ddd"],
+*[style*="background-color: #ccc"],
+*[style*="background-color: #bbb"],
+*[style*="background-color: #aaa"],
+*[style*="background-color: #999"],
+*[style*="background-color: #888"],
+*[style*="background-color: #777"],
+*[style*="background-color: #666"],
+*[style*="background-color: #555"],
+*[style*="background-color: #444"],
+*[style*="background-color: #333"],
+*[style*="background-color: #222"] {
+  background-color: #130e07 !important;
+  color: #c9a96e !important;
+}
+
+/* ============================================================
+   АНИМАЦИИ — тихое мерцание, как далёкий огонь
+   ============================================================ */
+@keyframes ember-glow {
+  0%   { text-shadow: 0 0 20px rgba(201,169,110,0.3), 0 0 40px rgba(201,169,110,0.1); }
+  50%  { text-shadow: 0 0 30px rgba(201,169,110,0.45), 0 0 60px rgba(201,169,110,0.18); }
+  100% { text-shadow: 0 0 20px rgba(201,169,110,0.3), 0 0 40px rgba(201,169,110,0.1); }
+}
+
+@keyframes horizon-pulse {
+  0%   { box-shadow: 0 0 20px rgba(201,169,110,0.06); }
+  50%  { box-shadow: 0 0 30px rgba(201,169,110,0.12); }
+  100% { box-shadow: 0 0 20px rgba(201,169,110,0.06); }
+}
+
+h1, h2,
+.profile-name,
+.lion-name {
+  animation: ember-glow 6s ease-in-out infinite !important;
+}
+
+.church-glow,
+.featured {
+  animation: horizon-pulse 8s ease-in-out infinite !important;
+}
+
+/* Уважаем prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  h1, h2, .profile-name, .lion-name,
+  .church-glow, .featured {
+    animation: none !important;
+  }
+}
