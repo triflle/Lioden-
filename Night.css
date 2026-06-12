@@ -53,6 +53,7 @@ h4, h5, h6 {
 
 /* ============================================================
    УНИВЕРСАЛЬНЫЙ ЗАХВАТ — все блоки и контейнеры
+   Прозрачность повышена: 0.82 → 0.45 чтобы фон просвечивал
    ============================================================ */
 html, body, div, span, main, section, article, aside,
 header, footer, nav, form, fieldset,
@@ -72,7 +73,7 @@ ul, ol, li, p, blockquote, pre,
 [class*="inner"], [class*="outer"],
 [class*="wrap"], [class*="box"],
 [class*="block"], [class*="card"] {
-  background-color: rgba(13,10,5,0.82) !important;
+  background-color: rgba(13,10,5,0.45) !important;
   color: #c9a96e !important;
 }
 
@@ -86,7 +87,7 @@ body, html {
    ============================================================ */
 table, thead, tbody, tfoot,
 [class*="table"] {
-  background-color: rgba(13,10,5,0.88) !important;
+  background-color: rgba(13,10,5,0.5) !important;
   color: #c9a96e !important;
   border-color: #2e2010 !important;
 }
@@ -98,7 +99,7 @@ tr, td {
 }
 
 th {
-  background-color: rgba(26,18,8,0.95) !important;
+  background-color: rgba(26,18,8,0.6) !important;
   color: #e8d5a3 !important;
   font-family: 'Jim Nightshade', cursive !important;
   font-size: 1.05em !important;
@@ -107,11 +108,11 @@ th {
 }
 
 tr:nth-child(even) td {
-  background-color: rgba(17,14,9,0.5) !important;
+  background-color: rgba(17,14,9,0.3) !important;
 }
 
 tr:hover td {
-  background-color: rgba(46,32,16,0.5) !important;
+  background-color: rgba(46,32,16,0.35) !important;
 }
 
 /* ============================================================
@@ -134,7 +135,7 @@ select,
 [id*="comment"],
 [id*="chat"],
 [id*="message"] {
-  background-color: #0d0a05 !important;
+  background-color: rgba(13,10,5,0.75) !important;
   background-image: none !important;
   color: #e8d5a3 !important;
   border: 1px solid #2e2010 !important;
@@ -168,7 +169,7 @@ ol.breadcrumb, ul.breadcrumb,
 nav.breadcrumb, [class*="breadcrumb"],
 .breadcrumb-item, .breadcrumb-item a,
 .breadcrumb li, .breadcrumb li a {
-  background-color: rgba(10,8,6,0.7) !important;
+  background-color: rgba(10,8,6,0.4) !important;
   background-image: none !important;
   color: #8b6a3a !important;
   border-color: #1e1609 !important;
@@ -188,7 +189,7 @@ nav.breadcrumb, [class*="breadcrumb"],
 .flash-message, .success-message, .error-message,
 [class*="alert"], [class*="notice"],
 [class*="flash"], [class*="message-box"] {
-  background-color: rgba(26,18,8,0.92) !important;
+  background-color: rgba(26,18,8,0.6) !important;
   background-image: none !important;
   color: #e8d5a3 !important;
   border: 1px solid #4a3518 !important;
@@ -197,7 +198,7 @@ nav.breadcrumb, [class*="breadcrumb"],
 
 .alert-success, [class*="success"] {
   border-left-color: #6b7c45 !important;
-  background-color: rgba(20,26,9,0.92) !important;
+  background-color: rgba(20,26,9,0.6) !important;
 }
 
 /* ============================================================
@@ -211,7 +212,7 @@ nav.breadcrumb, [class*="breadcrumb"],
 [class*="comment"], [class*="chat"],
 [class*="guestbook"], [id*="comment"],
 [id*="chat"], [id*="guestbook"] {
-  background-color: rgba(13,10,5,0.9) !important;
+  background-color: rgba(13,10,5,0.55) !important;
   background-image: none !important;
   color: #c9a96e !important;
   border-color: #1e1609 !important;
@@ -220,7 +221,7 @@ nav.breadcrumb, [class*="breadcrumb"],
 .comment-item, .chat-message,
 .post-item, .guestbook-item,
 [class*="comment-item"], [class*="chat-message"] {
-  background-color: rgba(19,14,7,0.92) !important;
+  background-color: rgba(19,14,7,0.6) !important;
   border: 1px solid #1e1609 !important;
   border-left: 2px solid #2e2010 !important;
   color: #c9a96e !important;
@@ -240,7 +241,7 @@ nav.breadcrumb, [class*="breadcrumb"],
 [class*="thumbnail"], [class*="thumb"],
 .grid-item, .grid-cell,
 [class*="grid-item"], [class*="grid-cell"] {
-  background-color: rgba(13,10,5,0.9) !important;
+  background-color: rgba(13,10,5,0.5) !important;
   background-image: none !important;
   border: 1px solid #2e2010 !important;
   color: #c9a96e !important;
@@ -251,7 +252,7 @@ nav.breadcrumb, [class*="breadcrumb"],
 [class*="cave"] span, [class*="slot"] span,
 [class*="cave"] div, [class*="slot"] div,
 .cave-label, .slot-label, .cave-name {
-  background-color: rgba(19,14,7,0.95) !important;
+  background-color: rgba(19,14,7,0.6) !important;
   color: #c9a96e !important;
   font-family: 'Jim Nightshade', cursive !important;
   font-size: 1.05em !important;
@@ -264,7 +265,7 @@ nav, header, .navbar, .nav, .header,
 .topbar, .top-bar, .site-header,
 [class*="navbar"], [class*="header"],
 [class*="topbar"] {
-  background-color: rgba(4,3,2,0.92) !important;
+  background-color: rgba(4,3,2,0.65) !important;
   background-image: none !important;
   border-bottom: 1px solid #1e1609 !important;
   color: #c9a96e !important;
@@ -320,8 +321,8 @@ a:hover, a:focus {
 button, input[type="button"], input[type="submit"],
 .btn, .button, a.btn, a.button,
 [class*="btn"], [class*="button"] {
-  background-color: #1e1609 !important;
-  background-image: linear-gradient(to bottom, #2e2010, #1a1208) !important;
+  background-color: rgba(30,22,9,0.8) !important;
+  background-image: linear-gradient(to bottom, rgba(46,32,16,0.8), rgba(26,18,8,0.8)) !important;
   color: #e8d5a3 !important;
   border: 1px solid #4a3518 !important;
   border-radius: 2px !important;
@@ -334,7 +335,7 @@ button, input[type="button"], input[type="submit"],
 
 button:hover, .btn:hover, .button:hover,
 input[type="submit"]:hover {
-  background-image: linear-gradient(to bottom, #3d2a12, #2e2010) !important;
+  background-image: linear-gradient(to bottom, rgba(61,42,18,0.9), rgba(46,32,16,0.9)) !important;
   border-color: #8b6a3a !important;
   color: #f5e8c4 !important;
   box-shadow: 0 0 10px rgba(201,169,110,0.2) !important;
@@ -345,7 +346,7 @@ input[type="submit"]:hover {
    ============================================================ */
 aside, .sidebar, .side-panel, .side-bar,
 [class*="sidebar"], [class*="side-panel"] {
-  background-color: rgba(13,10,5,0.88) !important;
+  background-color: rgba(13,10,5,0.5) !important;
   border-right: 1px solid #1e1609 !important;
 }
 
@@ -362,7 +363,7 @@ aside, .sidebar, .side-panel, .side-bar,
    ПОДВАЛ
    ============================================================ */
 footer, .footer, #footer, [class*="footer"] {
-  background-color: rgba(4,3,2,0.95) !important;
+  background-color: rgba(4,3,2,0.65) !important;
   border-top: 1px solid #1a1208 !important;
   color: #4a3518 !important;
 }
@@ -405,7 +406,7 @@ img:hover {
 [style*="background-color: #aaa"], [style*="background-color: #bbb"],
 [style*="background-color: #ccc"], [style*="background-color: #ddd"],
 [style*="background-color: #eee"], [style*="background-color: #fff"] {
-  background-color: rgba(19,14,7,0.92) !important;
+  background-color: rgba(19,14,7,0.5) !important;
   color: #c9a96e !important;
 }
 
