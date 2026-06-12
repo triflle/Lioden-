@@ -1,14 +1,20 @@
 /* ============================================================
    LIODEN PROFILE CSS — "PRAIRIE CHURCH AT MIDNIGHT"
-   github: triflle/Lioden-
+   v2 — фон, Jim Nightshade, полный захват серых полей
    ============================================================ */
+
+/* --- ПОДКЛЮЧЕНИЕ ШРИФТА JIM NIGHTSHADE --- */
+@import url('https://fonts.googleapis.com/css2?family=Jim+Nightshade&display=swap');
 
 /* ============================================================
    ФОНОВАЯ КАРТИНКА
    ============================================================ */
-html, body {
+body,
+html {
   background-color: #0a0806 !important;
-  background-image: url('https://i.postimg.cc/2y429qTs/731b0fad0ad5d6e387f6536c5d10fb9d.jpg') !important;
+  background-image:
+    linear-gradient(to bottom, rgba(4,3,2,0.55) 0%, rgba(10,8,6,0.35) 50%, rgba(4,3,2,0.6) 100%),
+    url('https://i.postimg.cc/2y429qTs/731b0fad0ad5d6e387f6536c5d10fb9d.jpg') !important;
   background-size: cover !important;
   background-attachment: fixed !important;
   background-position: center center !important;
@@ -19,132 +25,133 @@ html, body {
 }
 
 /* ============================================================
-   ЯДЕРНЫЙ ЗАХВАТ — все div/section/span/td и прочее
-   Lioden использует #c8d0d4 как фирменный серо-голубой
+   ШРИФТ JIM NIGHTSHADE — заголовки и имена
    ============================================================ */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video,
-main, .main, #main,
-.container, .container-fluid,
-.row, [class*="col-"],
-.panel, .box, .block, .card, .module,
-.widget, .inner, .outer, .wrap,
-.den, .den-wrap, .den-content, .den-main,
-.profile, .profile-wrap, .profile-content,
-.page-content, .page-inner, .main-content,
-.site-content, .site-body, .site-wrap,
-#wrapper, .wrapper, #page-wrap, .page-wrap,
-#main-wrap, .main-wrap, #content, .content,
-.section, .layout, .grid,
-[class*="container"], [class*="wrapper"],
-[class*="content"], [class*="layout"],
-[class*="panel"], [class*="section"],
-[class*="module"], [class*="block"],
-[class*="widget"], [class*="inner"],
-[class*="outer"], [class*="wrap"],
-[class*="den"], [class*="cave"],
-[class*="slot"], [class*="pride"],
-[class*="lion"], [class*="stat"],
-[class*="info"], [class*="data"],
-[class*="box"], [class*="card"],
-[class*="list"], [class*="item"],
-[class*="row"], [class*="grid"],
-[class*="col"], [class*="tab"] {
-  background-color: rgba(13, 10, 5, 0.82) !important;
-  color: #c9a96e !important;
-  border-color: #2e2010 !important;
-}
-
-/* Полупрозрачность для основных блоков — виден фон */
-.panel, .box, .block, .card, .module,
-.widget, .den, .den-wrap, .profile,
-.cave-slot, .slot, [class*="cave"],
-[class*="slot"], [class*="box"],
-[class*="panel"], [class*="card"] {
-  background-color: rgba(13, 10, 5, 0.85) !important;
-  border: 1px solid #2e2010 !important;
-  box-shadow: 0 2px 16px rgba(0,0,0,0.6) !important;
-}
-
-/* ============================================================
-   ТАБЛИЦЫ — включая таблицу статов льва
-   ============================================================ */
-table, thead, tbody, tfoot {
-  background-color: rgba(13, 10, 5, 0.88) !important;
-}
-
-tr, th, td {
-  background-color: transparent !important;
-  border-color: #2e2010 !important;
-  color: #c9a96e !important;
-}
-
-th {
-  background-color: rgba(26, 18, 8, 0.95) !important;
-  color: #e8d5a3 !important;
-  font-weight: normal !important;
+h1, h2, h3,
+.profile-name, .lion-name, .den-title,
+.page-title, [class*="page-title"],
+[class*="den-title"], [class*="lion-name"],
+.profile-title, [class*="profile-title"] {
+  font-family: 'Jim Nightshade', cursive !important;
   letter-spacing: 0.05em !important;
 }
 
+h1, h2,
+.profile-name, .lion-name, .den-title,
+.page-title {
+  font-size: 2.2em !important;
+}
+
+h3 {
+  font-size: 1.5em !important;
+}
+
+h4, h5, h6 {
+  font-family: 'Jim Nightshade', cursive !important;
+  font-size: 1.2em !important;
+}
+
+/* ============================================================
+   УНИВЕРСАЛЬНЫЙ ЗАХВАТ — все блоки и контейнеры
+   ============================================================ */
+html, body, div, span, main, section, article, aside,
+header, footer, nav, form, fieldset,
+ul, ol, li, p, blockquote, pre,
+#page-wrap, .page-wrap, #wrapper, .wrapper,
+#main-wrap, .main-wrap, #content, .content,
+#site-body, .site-body, .container, .container-fluid,
+.row, .col, [class*="col-"], .grid, .layout,
+.panel, .box, .block, .card, .module,
+.section, .widget, .inner, .outer, .wrap,
+.den, .den-wrap, .profile, .profile-wrap,
+.den-content, .den-main, .page-content,
+.main-content, .site-content, .page-inner,
+[class*="container"], [class*="wrapper"],
+[class*="content"], [class*="layout"],
+[class*="panel"], [class*="section"],
+[class*="inner"], [class*="outer"],
+[class*="wrap"], [class*="box"],
+[class*="block"], [class*="card"] {
+  background-color: rgba(13,10,5,0.82) !important;
+  color: #c9a96e !important;
+}
+
+/* Фон страницы остаётся прозрачным чтобы картинка проглядывала */
+body, html {
+  background-color: #0a0806 !important;
+}
+
+/* ============================================================
+   ТАБЛИЦЫ
+   ============================================================ */
+table, thead, tbody, tfoot,
+[class*="table"] {
+  background-color: rgba(13,10,5,0.88) !important;
+  color: #c9a96e !important;
+  border-color: #2e2010 !important;
+}
+
+tr, td {
+  background-color: transparent !important;
+  color: #c9a96e !important;
+  border-color: #2e2010 !important;
+}
+
+th {
+  background-color: rgba(26,18,8,0.95) !important;
+  color: #e8d5a3 !important;
+  font-family: 'Jim Nightshade', cursive !important;
+  font-size: 1.05em !important;
+  letter-spacing: 0.06em !important;
+  border-bottom: 1px solid #2e2010 !important;
+}
+
 tr:nth-child(even) td {
-  background-color: rgba(17, 12, 5, 0.5) !important;
+  background-color: rgba(17,14,9,0.5) !important;
 }
 
 tr:hover td {
-  background-color: rgba(46, 32, 16, 0.4) !important;
+  background-color: rgba(46,32,16,0.5) !important;
 }
 
 /* ============================================================
-   ХЛЕБНЫЕ КРОШКИ — белая полоса над заголовком
-   ============================================================ */
-.breadcrumb, .breadcrumbs,
-ol.breadcrumb, ul.breadcrumb,
-nav.breadcrumb, [class*="breadcrumb"],
-.breadcrumb li, .breadcrumb-item,
-.breadcrumb > li + li::before {
-  background-color: rgba(10, 8, 6, 0.9) !important;
-  background-image: none !important;
-  color: #8b6a3a !important;
-  border-color: #1e1609 !important;
-}
-
-/* ============================================================
-   TEXTAREA / INPUT / SELECT — чат и поля
+   ПОЛЯ ВВОДА — textarea, input, select, чат
    ============================================================ */
 textarea,
-input, input[type="text"], input[type="email"],
-input[type="search"], input[type="password"],
-input[type="number"], input[type="url"],
-input[type="tel"], input[type="date"],
+input,
+input[type="text"],
+input[type="email"],
+input[type="search"],
+input[type="password"],
+input[type="number"],
+input[type="url"],
 select,
-.comment-box, .chat-input, .message-input,
-[class*="input"], [id*="comment"],
-[id*="chat"], [id*="message"] {
+.comment-box,
+.chat-input,
+.message-input,
+[class*="textarea"],
+[class*="input-field"],
+[id*="comment"],
+[id*="chat"],
+[id*="message"] {
   background-color: #0d0a05 !important;
   background-image: none !important;
   color: #e8d5a3 !important;
   border: 1px solid #2e2010 !important;
   border-radius: 2px !important;
   outline: none !important;
+  font-family: 'Georgia', serif !important;
 }
 
-textarea:focus, input:focus, select:focus {
+textarea:focus,
+input:focus,
+select:focus {
   border-color: #8b6a3a !important;
-  box-shadow: 0 0 8px rgba(139,106,58,0.35) !important;
+  box-shadow: 0 0 8px rgba(139,106,58,0.3) !important;
 }
 
-textarea::placeholder, input::placeholder {
+textarea::placeholder,
+input::placeholder {
   color: #4a3518 !important;
 }
 
@@ -154,16 +161,34 @@ select option {
 }
 
 /* ============================================================
-   УВЕДОМЛЕНИЯ И АЛЕРТЫ
+   ХЛЕБНЫЕ КРОШКИ
+   ============================================================ */
+.breadcrumb, .breadcrumbs,
+ol.breadcrumb, ul.breadcrumb,
+nav.breadcrumb, [class*="breadcrumb"],
+.breadcrumb-item, .breadcrumb-item a,
+.breadcrumb li, .breadcrumb li a {
+  background-color: rgba(10,8,6,0.7) !important;
+  background-image: none !important;
+  color: #8b6a3a !important;
+  border-color: #1e1609 !important;
+}
+
+.breadcrumb-item.active,
+.breadcrumb li.active {
+  color: #e8d5a3 !important;
+}
+
+/* ============================================================
+   УВЕДОМЛЕНИЯ / ALERTS
    ============================================================ */
 .alert, .alert-success, .alert-info,
 .alert-warning, .alert-danger,
-.notice, .notification,
-.flash, .flash-message,
-.success-message, .error-message,
+.notice, .notification, .flash,
+.flash-message, .success-message, .error-message,
 [class*="alert"], [class*="notice"],
 [class*="flash"], [class*="message-box"] {
-  background-color: rgba(26, 18, 8, 0.95) !important;
+  background-color: rgba(26,18,8,0.92) !important;
   background-image: none !important;
   color: #e8d5a3 !important;
   border: 1px solid #4a3518 !important;
@@ -172,11 +197,11 @@ select option {
 
 .alert-success, [class*="success"] {
   border-left-color: #6b7c45 !important;
-  background-color: rgba(20, 26, 9, 0.95) !important;
+  background-color: rgba(20,26,9,0.92) !important;
 }
 
 /* ============================================================
-   ГЛОБАЛЬНЫЙ ЧАТ / КОММЕНТАРИИ / ГОСТЕВАЯ
+   КОММЕНТАРИИ / ГОСТЕВАЯ КНИГА / ГЛОБАЛЬНЫЙ ЧАТ
    ============================================================ */
 .comment, .comment-wrap, .comment-box,
 .comment-section, .comments,
@@ -186,10 +211,50 @@ select option {
 [class*="comment"], [class*="chat"],
 [class*="guestbook"], [id*="comment"],
 [id*="chat"], [id*="guestbook"] {
-  background-color: rgba(13, 10, 5, 0.88) !important;
+  background-color: rgba(13,10,5,0.9) !important;
   background-image: none !important;
   color: #c9a96e !important;
   border-color: #1e1609 !important;
+}
+
+.comment-item, .chat-message,
+.post-item, .guestbook-item,
+[class*="comment-item"], [class*="chat-message"] {
+  background-color: rgba(19,14,7,0.92) !important;
+  border: 1px solid #1e1609 !important;
+  border-left: 2px solid #2e2010 !important;
+  color: #c9a96e !important;
+  padding: 10px 14px !important;
+  margin-bottom: 6px !important;
+}
+
+/* ============================================================
+   КАРТОЧКИ ПЕЩЕР / CAVE SLOTS — специальный захват
+   ============================================================ */
+.cave-slot, .cave, .den-slot, .slot,
+[class*="cave"], [class*="slot"],
+[class*="den-slot"], [class*="mound"],
+[class*="beetle"], [class*="pride"],
+[class*="unsorted"], [class*="nesting"],
+.thumbnail, .thumb,
+[class*="thumbnail"], [class*="thumb"],
+.grid-item, .grid-cell,
+[class*="grid-item"], [class*="grid-cell"] {
+  background-color: rgba(13,10,5,0.9) !important;
+  background-image: none !important;
+  border: 1px solid #2e2010 !important;
+  color: #c9a96e !important;
+}
+
+/* Подписи под картинками пещер */
+[class*="cave"] p, [class*="slot"] p,
+[class*="cave"] span, [class*="slot"] span,
+[class*="cave"] div, [class*="slot"] div,
+.cave-label, .slot-label, .cave-name {
+  background-color: rgba(19,14,7,0.95) !important;
+  color: #c9a96e !important;
+  font-family: 'Jim Nightshade', cursive !important;
+  font-size: 1.05em !important;
 }
 
 /* ============================================================
@@ -198,36 +263,40 @@ select option {
 nav, header, .navbar, .nav, .header,
 .topbar, .top-bar, .site-header,
 [class*="navbar"], [class*="header"],
-[class*="topbar"], [class*="top-bar"] {
-  background-color: rgba(4, 3, 2, 0.95) !important;
+[class*="topbar"] {
+  background-color: rgba(4,3,2,0.92) !important;
   background-image: none !important;
   border-bottom: 1px solid #1e1609 !important;
   color: #c9a96e !important;
 }
 
-nav a, .nav a, .navbar a, [class*="nav"] a {
+nav a, .nav a, .navbar a, .header a,
+.nav-link, [class*="nav"] a {
   color: #8b6a3a !important;
+  font-family: 'Jim Nightshade', cursive !important;
+  font-size: 1.05em !important;
+  letter-spacing: 0.04em !important;
 }
 
-nav a:hover, .nav a:hover {
+nav a:hover, .nav a:hover, .nav-link:hover {
   color: #e8d5a3 !important;
   background-color: rgba(46,32,16,0.5) !important;
+  text-shadow: 0 0 10px rgba(201,169,110,0.3) !important;
 }
 
 /* ============================================================
-   ЗАГОЛОВКИ
+   ЗАГОЛОВКИ — цвет
    ============================================================ */
 h1, h2, h3, h4, h5, h6,
 [class*="title"], [class*="heading"] {
   color: #e8d5a3 !important;
-  font-family: 'Georgia', serif !important;
   font-weight: normal !important;
-  letter-spacing: 0.08em !important;
-  background-color: transparent !important;
+  text-shadow: 0 0 20px rgba(201,169,110,0.25) !important;
 }
 
-h1, h2, .profile-name, .lion-name,
-.den-title, .page-title, [class*="page-title"] {
+h1, h2,
+.profile-name, .lion-name, .den-title,
+.page-title {
   animation: ember-glow 6s ease-in-out infinite !important;
 }
 
@@ -256,7 +325,9 @@ button, input[type="button"], input[type="submit"],
   color: #e8d5a3 !important;
   border: 1px solid #4a3518 !important;
   border-radius: 2px !important;
-  font-family: 'Georgia', serif !important;
+  font-family: 'Jim Nightshade', cursive !important;
+  font-size: 1.05em !important;
+  letter-spacing: 0.06em !important;
   cursor: pointer !important;
   transition: all 0.3s ease !important;
 }
@@ -267,6 +338,33 @@ input[type="submit"]:hover {
   border-color: #8b6a3a !important;
   color: #f5e8c4 !important;
   box-shadow: 0 0 10px rgba(201,169,110,0.2) !important;
+}
+
+/* ============================================================
+   САЙДБАР
+   ============================================================ */
+aside, .sidebar, .side-panel, .side-bar,
+[class*="sidebar"], [class*="side-panel"] {
+  background-color: rgba(13,10,5,0.88) !important;
+  border-right: 1px solid #1e1609 !important;
+}
+
+/* ============================================================
+   СКРОЛЛБАР
+   ============================================================ */
+* { scrollbar-color: #2e2010 #0a0806 !important; }
+::-webkit-scrollbar { width: 5px !important; height: 5px !important; }
+::-webkit-scrollbar-track { background: #0a0806 !important; }
+::-webkit-scrollbar-thumb { background: #2e2010 !important; border-radius: 3px !important; }
+::-webkit-scrollbar-thumb:hover { background: #4a3518 !important; }
+
+/* ============================================================
+   ПОДВАЛ
+   ============================================================ */
+footer, .footer, #footer, [class*="footer"] {
+  background-color: rgba(4,3,2,0.95) !important;
+  border-top: 1px solid #1a1208 !important;
+  color: #4a3518 !important;
 }
 
 /* ============================================================
@@ -283,38 +381,16 @@ img:hover {
 }
 
 /* ============================================================
-   САЙДБАР / ПОДВАЛ
+   ФИНАЛЬНЫЙ АВАРИЙНЫЙ ЗАХВАТ
    ============================================================ */
-aside, .sidebar, .side-panel, .side-bar,
-[class*="sidebar"], [class*="side-panel"] {
-  background-color: rgba(13, 10, 5, 0.9) !important;
-  border-right: 1px solid #1e1609 !important;
+*:not(img):not(svg):not(path):not(circle):not(rect):not(body):not(html) {
+  border-color: #2e2010 !important;
 }
 
-footer, .footer, #footer, [class*="footer"] {
-  background-color: rgba(4, 3, 2, 0.95) !important;
-  border-top: 1px solid #1a1208 !important;
-  color: #4a3518 !important;
-}
-
-/* ============================================================
-   СКРОЛЛБАР
-   ============================================================ */
-::-webkit-scrollbar { width: 5px !important; height: 5px !important; }
-::-webkit-scrollbar-track { background: #0a0806 !important; }
-::-webkit-scrollbar-thumb { background: #2e2010 !important; border-radius: 3px !important; }
-::-webkit-scrollbar-thumb:hover { background: #4a3518 !important; }
-* { scrollbar-color: #2e2010 #0a0806 !important; }
-
-/* ============================================================
-   ФИНАЛЬНЫЙ АВАРИЙНЫЙ ЗАХВАТ СЕРЫХ/БЕЛЫХ ИНЛАЙН-СТИЛЕЙ
-   ============================================================ */
 [style*="background:#f"], [style*="background: #f"],
 [style*="background:#e"], [style*="background: #e"],
 [style*="background:#d"], [style*="background: #d"],
-[style*="background:#c8d0d4"],
-[style*="background-color:#c8d0d4"],
-[style*="background-color: #c8d0d4"],
+[style*="background:#c"], [style*="background: #c"],
 [style*="background:white"], [style*="background: white"],
 [style*="background:gray"], [style*="background: gray"],
 [style*="background:grey"], [style*="background: grey"],
@@ -323,13 +399,13 @@ footer, .footer, #footer, [class*="footer"] {
 [style*="background-color:#d"], [style*="background-color: #d"],
 [style*="background-color:white"], [style*="background-color: white"],
 [style*="background-color:gray"], [style*="background-color: gray"],
-[style*="background-color:#aaa"], [style*="background-color: #aaa"],
-[style*="background-color:#bbb"], [style*="background-color: #bbb"],
-[style*="background-color:#ccc"], [style*="background-color: #ccc"],
-[style*="background-color:#ddd"], [style*="background-color: #ddd"],
-[style*="background-color:#eee"], [style*="background-color: #eee"],
-[style*="background-color:#fff"], [style*="background-color: #fff"] {
-  background-color: rgba(13, 10, 5, 0.88) !important;
+[style*="background-color:#aaa"], [style*="background-color:#bbb"],
+[style*="background-color:#ccc"], [style*="background-color:#ddd"],
+[style*="background-color:#eee"], [style*="background-color:#fff"],
+[style*="background-color: #aaa"], [style*="background-color: #bbb"],
+[style*="background-color: #ccc"], [style*="background-color: #ddd"],
+[style*="background-color: #eee"], [style*="background-color: #fff"] {
+  background-color: rgba(19,14,7,0.92) !important;
   color: #c9a96e !important;
 }
 
